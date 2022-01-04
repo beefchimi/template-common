@@ -1,0 +1,22 @@
+name: Test
+on: [push]
+
+jobs:
+  test:
+    name: Build and run tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@master
+
+      - name: Setup Node 17.x
+        uses: actions/setup-node@master
+        with:
+          version: 17.x
+
+      - name: Install Dependencies and build (with cache)
+        uses: bahmutov/npm-install@master
+
+      - name: Test
+        run: yarn run test

@@ -1,0 +1,24 @@
+name: Lint
+on: [push]
+
+jobs:
+  lint:
+    name: Lint the codebase
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node 17.x
+        uses: actions/setup-node@master
+        with:
+          version: 17.x
+
+      - name: Install Dependencies and build (with cache)
+        uses: bahmutov/npm-install@master
+
+      - name: Lint
+        run: yarn run lint
