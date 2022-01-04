@@ -16,7 +16,7 @@ jobs:
           version: 17.x
 
       - name: Install Dependencies and build (with cache)
-        uses: bahmutov/npm-install@master
+        uses: bahmutov/npm-install@v1
 
       - name: Test
         run: yarn run test
