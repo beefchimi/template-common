@@ -21,4 +21,4 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: Lint
-        run: yarn run lint
+        run: npm run lint
