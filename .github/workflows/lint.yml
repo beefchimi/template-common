@@ -18,7 +18,7 @@ jobs:
           version: 17.x
 
       - name: Install Dependencies and build (with cache)
-        uses: bahmutov/npm-install@v1
+        uses: bahmutov/npm-install@master
 
       - name: Lint
         run: npm run lint
