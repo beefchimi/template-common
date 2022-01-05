@@ -8,10 +8,10 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
 
       - name: Setup Node 17.x
-        uses: actions/setup-node@master
+        uses: actions/setup-node@v2
         with:
           version: 17.x
 
@@ -19,4 +19,4 @@ jobs:
         uses: bahmutov/npm-install@master
 
       - name: Test
-        run: yarn run test
+        run: npm run test

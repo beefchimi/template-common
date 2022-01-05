@@ -11,7 +11,9 @@ jobs:
       pull-requests: write
 
     steps:
+      - uses: actions/checkout@v2
+
       - name: Apply PR labels
-        uses: actions/labeler@master
+        uses: actions/labeler@v3
         with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
