@@ -5,8 +5,3 @@ build/
 coverage/
 dist/
 storybook-static/
-
-# Configs
-# vite.config.ts
-# jest.config.js
-# postcss.config.js
