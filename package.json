@@ -1,6 +1,6 @@
 {
   "name": "template-common",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A common web project",
   "author": "Curtis Dulmage",
   "license": "ISC",
@@ -25,12 +25,12 @@
     "test": "echo 'test'",
     "build": "echo 'build'",
     "clean": "rm -rf dist",
-    "nuke": "./scripts/nuke-npm.sh"
+    "nuke": "npm run clean && rm -rf node_modules && rm -rf package-lock.json && npm cache clean --force"
   },
   "devDependencies": {
-    "@beefchimi/config-browserslist": "^0.0.2",
-    "@beefchimi/config-prettier": "^0.0.2",
-    "@beefchimi/config-typescript": "^0.0.2",
-    "@beefchimi/plugin-eslint": "^0.0.2"
+    "@beefchimi/config-browserslist": "^0.0.4",
+    "@beefchimi/config-prettier": "^0.0.4",
+    "@beefchimi/config-typescript": "^0.0.4",
+    "@beefchimi/eslint-plugin": "^0.0.4"
   }
 }
