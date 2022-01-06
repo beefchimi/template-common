@@ -7,8 +7,8 @@
   - any:
       [
         '*',
-        '.github',
-        '.vscode',
+        '.github/**/*',
+        '.vscode/**/*',
         '.yarn*',
         '.yarn/**/*',
         'scripts/**/*',
