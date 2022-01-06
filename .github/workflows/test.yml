@@ -3,12 +3,15 @@ on: [push]
 
 jobs:
   test:
-    name: Build and run tests
+    name: Build and run Jest tests
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+
+      - name: Setup .npmrc file
+        run: echo "//npm.pkg.github.com/:_authToken=${{secrets.GH_PKG_TOKEN}}" > .npmrc
 
       - name: Setup Node 17.x
         uses: actions/setup-node@v2
@@ -16,7 +19,9 @@ jobs:
           version: 17.x
 
       - name: Install Dependencies and build (with cache)
-        uses: bahmutov/npm-install@master
+        uses: bahmutov/npm-install@v1
+        env:
+          GH_PKG_TOKEN: ${{ secrets.GH_PKG_TOKEN }}
 
       - name: Test
         run: npm run test

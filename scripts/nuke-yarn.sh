@@ -2,9 +2,9 @@
 
 function nukeYarn() {
   rm -rf node_modules &&
-  rm -rf .yarn &&
   rm -rf yarn.lock &&
-  # We don't always want to nuke this file:
+  # We don't always want to nuke these files:
+  # rm -rf .yarn &&
   # rm -rf .yarnrc.yml &&
   rm -rf .pnp.cjs &&
   rm -rf .pnp.loader.mjs &&
