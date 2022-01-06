@@ -1,2 +1,18 @@
-👽️ dependency: package.json
-🔧 tooling: scripts/*
+👽️ dependency:
+  - any: ['**/package*', '**/yarn.lock', '.pnp.*']
+📝 documentation:
+  - any: ['src/**/*.md', 'docs/**/*']
+🔖 release: '**/CHANGELOG.md'
+🔧 tooling:
+  - any:
+      [
+        '*',
+        '.github',
+        '.vscode',
+        '.yarn*',
+        '.yarn/**/*',
+        'scripts/**/*',
+        '!package*',
+        '!yarn.lock',
+        '!*.md',
+      ]
