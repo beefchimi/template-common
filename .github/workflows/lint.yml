@@ -10,18 +10,17 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Setup .npmrc file
-        run: echo "//npm.pkg.github.com/:_authToken=${{secrets.GH_PKG_TOKEN}}" > .npmrc
-
-      - name: Setup Node 17.x
+      - name: Setup Node 17.x and write .npmrc
         uses: actions/setup-node@v2
         with:
           version: 17.x
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@beefchimi'
 
       - name: Install Dependencies and build (with cache)
         uses: bahmutov/npm-install@v1
         env:
-          GH_PKG_TOKEN: ${{ secrets.GH_PKG_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Lint
         run: npm run lint
