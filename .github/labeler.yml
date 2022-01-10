@@ -1,8 +1,8 @@
 👽️ dependency:
   - any: ['**/package*', '**/yarn.lock', '.pnp.*']
-📝 documentation:
-  - any: ['src/**/*.md', 'docs/**/*']
+📝 documentation: '**/!(CHANGELOG|LICENSE|MIGRATION).@(md|mdx)'
 🔖 release: '**/CHANGELOG.md'
+🧪 testing: '**/*.@(spec|test).@(js|jsx|ts|tsx)'
 🔧 tooling:
   - any:
       [
@@ -11,8 +11,9 @@
         '.vscode/**/*',
         '.yarn*',
         '.yarn/**/*',
+        'config/**/*',
         'scripts/**/*',
         '!package*',
         '!yarn.lock',
-        '!*.md',
+        '!*.@(md|mdx)',
       ]
